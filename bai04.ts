@@ -1,5 +1,9 @@
 import { question } from "readline-sync";
 
+/**
+ * Hàm in cách đọc số nguyên 2 chữ số
+ * @param n Số nguyên 2 chữ số
+ */
 function docSo(n: number): void {
     let number1: number = Math.floor(n / 10);
     let number2: number = n % 10;
@@ -66,11 +70,13 @@ function docSo(n: number): void {
     console.log(a + b);
 };
 
-
+/**
+ * Hàm chức năng nhập số nguyên 2 chữ số và đọc số
+ */
 function cnDocSo(): void {
     let n: number = 0;
     do {
-        n = Number(question("Nhap so nguyen: "));
+        n = Number(question("Nhap so nguyen 2 chu so: "));
     } while (n < 10 || n > 99)
 	docSo(n);
 };

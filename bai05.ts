@@ -1,5 +1,9 @@
 import { question } from "readline-sync";
 
+/**
+ * Hàm kiểm tra số hoàn thiện
+ * @param n Số nhập
+ */
 function kiemTraSoHoanThien(n: number): void {
     let S: number = 0;
     for (let i: number = 1; i < n; i++) {
@@ -14,7 +18,9 @@ function kiemTraSoHoanThien(n: number): void {
     };
 };
 
-
+/**
+ * Hàm chức năng nhập số và kiểm tra số hoàn thiện
+ */
 function cnKiemTraSoHoanThien(): void {
     let n: number = 0;
     do {
