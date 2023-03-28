@@ -1,29 +1,80 @@
 import { question } from "readline-sync";
 
-/**
- * Hàm in ra thông tin và trả về tuổi
- * @param ten Tên của người dùng
- * @param namSinh Năm sinh của người dùng
- * @returns Tuổi của người dùng
- */
-function xinChao(ten: string, namSinh: number): number {
-    console.log("Xin chào, mình tên là " + ten + ".");
-    console.log("Mình sinh năm " + namSinh + ".");
-    console.log("Rất vui được gặp bạn.");
-    const tuoi: number = 2023 - namSinh;
-	console.log(tuoi);
-    return tuoi;
+function docSo(n: number): void {
+    let number1: number = Math.floor(n / 10);
+    let number2: number = n % 10;
+    let a: string = "";
+    let b: string = "";
+    switch (number1) {
+        case 1:
+            a = ("Mười ");
+            break;
+        case 2:
+            a = ("Hai mươi ");
+            break;
+        case 3:
+            a = ("Ba mươi ");
+            break;
+        case 4:
+            a = ("Bốn mươi ");
+            break;
+        case 5:
+            a = ("Năm mươi ");
+            break;
+        case 6:
+            a = ("Sáu mươi ");
+            break;
+        case 7:
+            a = ("Bảy mươi ");
+            break;
+        case 8:
+            a = ("Tám mươi ");
+            break;
+        case 9:
+            a = ("Chín mươi ");
+            break;
+    }
+    switch (number2) {
+        case 1:
+            b = ("một");
+            break;
+        case 2:
+            b = ("hai");
+            break;
+        case 3:
+            b = ("ba");
+            break;
+        case 4:
+            b = ("bốn");
+            break;
+        case 5:
+            b = ("năm");
+            break;
+        case 6:
+            b = ("sáu");
+            break;
+        case 7:
+            b = ("bảy");
+            break;
+        case 8:
+            b = ("tám");
+            break;
+        case 9:
+            b = ("chín");
+            break;
+    };
+    console.log(a + b);
 };
 
-/**
- * Hàm chức năng nhập tên, năm sinh và in ra thông tin
- */
-function cnXinChao(): void {
-	let ten: string = question("Nhap ten: ");
-	let namSinh: number = Number(question("Nhap nam sinh: "));
-	xinChao(ten, namSinh);
-}
 
-cnXinChao();
+function cnDocSo(): void {
+    let n: number = 0;
+    do {
+        n = Number(question("Nhap so nguyen: "));
+    } while (n < 10 || n > 99)
+	docSo(n);
+};
+
+cnDocSo();
 
 export {}

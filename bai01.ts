@@ -1,14 +1,25 @@
 import { question } from "readline-sync";
 
-/**
- * Hàm in ra thông tin của người dùng
- */
-function xinChao(): void {
-    console.log("Xin chào, mình tên là Bảo.");
-    console.log("Mình sinh năm 2003.");
-    console.log("Rất vui được gặp bạn.");
+
+function chuViHinhTron(r: number): number {
+    const C: number = r * 2 * 3.14;
+	console.log("Chu vi la " + C);
+    return C;
 };
 
-xinChao();
+function dienTichHinhTron(r: number): number {
+    const S: number = r * r * 3.14;
+	console.log("Dien tich la " + S);
+    return S;
+};
+
+
+function cnChuViVaDienTichHinhTron(): void {
+	let r: number = Number(question("Nhap ban kinh: "));
+	chuViHinhTron(r);
+    dienTichHinhTron(r);
+};
+
+cnChuViVaDienTichHinhTron();
 
 export {}

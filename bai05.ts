@@ -1,53 +1,28 @@
 import { question } from "readline-sync";
 
-/**
- * In ra lời chào và trả về tuổi
- * @param ten Tên của người dùng
- * @param namSinh Tuổi của người dùng
- * @returns Tuổi của người dùng
- */
-function xinChao(ten: string, namSinh: number): number {
-    console.log("Xin chào, mình tên là " + ten + ".");
-    console.log("Mình sinh năm " + namSinh + ".");
-    console.log("Rất vui được gặp bạn.");
-    const tuoi: number = 2023 - namSinh;
-	console.log(tuoi);
-    return tuoi;
+function kiemTraSoHoanThien(n: number): void {
+    let S: number = 0;
+    for (let i: number = 1; i < n; i++) {
+        if (n % i == 0) {
+            S += i;
+        };
+    };
+    if (S == n) {
+        console.log("Yes");
+    } else {
+        console.log("No");
+    };
 };
 
-/**
- * Lấy tên từ bàn phím
- * @returns Tên hợp lệ
- */
-function nhapTen(): string {
-    let ten: string = "";
+
+function cnKiemTraSoHoanThien(): void {
+    let n: number = 0;
     do {
-        ten = question("Nhap ten: ");
-    } while (ten == "");
-	return ten;
+        n = Number(question("Nhap so: "));
+    } while (n < 0)
+	kiemTraSoHoanThien(n);
 };
 
-/**
- * Lấy năm sinh từ bàn phím
- * @returns Năm sinh hợp lệ
- */
-function nhapNamSinh(): number {
-	let namSinh: number = 0;
-    do {
-        namSinh = Number(question("Nhap nam sinh: "));
-    } while (namSinh <= 0 || namSinh >= 2024);
-	return namSinh;
-};
-
-/**
- * Hàm chức năng nhập tên, tuổi và in thông tin người dùng
- */
-function cnXinChao(): void {
-	let ten: string = nhapTen();
-    let namSinh: number = nhapNamSinh();
-	xinChao(ten, namSinh);
-};
-
-cnXinChao();
+cnKiemTraSoHoanThien();
 
 export {}
